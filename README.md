@@ -24,40 +24,18 @@ graph TD
 
     subgraph "Phase 2: Long-Term Memory (RAG)"
         C --> D[3. Create Embedding for Lead];
-        D --> E[4. Query Supabase Vector DB <br/><i>(Find past interactions)</i>];
+        D --> E["4. Query Supabase Vector DB <br>(Find past interactions)"];
     end
 
     subgraph "Phase 3: Personalized Action & Analysis"
-        E --> F{5. OpenAI: Generate Personalized <br/> Outreach Message};
+        E --> F{"5. OpenAI: Generate Personalized <br> Outreach Message"};
         F --> G[6. Send Email via Gmail];
         G --> H(7. Wait & Listen for Reply);
-        H --> I{8. OpenAI: Analyze Reply Intent <br/><i>(Interested or Not Interested?)</i>};
+        H --> I{"8. OpenAI: Analyze Reply Intent <br>(Interested or Not Interested?)"};
     end
 
     subgraph "Phase 4: Autonomous Execution"
         I --> J{9. Positive Reply?};
-        J -- Yes --> K[10a. Access Google Calendar <br/> & Create Meeting];
-        J -- No --> L[10b. Log Lead in Google Sheet <br/> for future follow-up];
+        J -- Yes --> K["10a. Access Google Calendar <br> & Create Meeting"];
+        J -- No --> L["10b. Log Lead in Google Sheet <br> for future follow-up"];
     end
-```
-
----
-
-## 3. Tech & Skills Showcase
-This project demonstrates the ability to orchestrate a complex series of tools to create a single, intelligent system.
-
--   **Automation Platform:** [**n8n.io**](https://n8n.io/)
--   **Core AI Logic:** OpenAI (for lead scoring, text generation, and intent analysis)
--   **Long-Term Memory (RAG):** Supabase (as the vector database for storing and retrieving past interactions)
--   **Execution Tools:** Google Workspace APIs (Gmail for sending emails, Google Calendar for booking meetings, Google Sheets for logging data)
--   **Architecture:** Agentic AI, Workflow Automation, API Integration
-
----
-
-## 4. Key Features & Impact
-This autonomous agent provides significant value by moving beyond simple automation.
-
--   ✅ **Fully Autonomous:** Works 24/7 without human intervention to ensure no lead is missed.
--   ✅ **Hyper-Personalized:** Uses a RAG pipeline to reference past interactions, making each outreach email unique and context-aware.
--   ✅ **Efficient & Scalable:** Frees up the sales team to focus exclusively on high-value conversations with pre-booked, qualified leads.
--   ✅ **Intelligent Decision-Making:** Uses AI to analyze human replies and autonomously decides on the correct next action.

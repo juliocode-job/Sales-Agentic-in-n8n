@@ -24,18 +24,18 @@ graph TD
 
     subgraph "Phase 2: Long-Term Memory (RAG)"
         C --> D[3. Create Embedding for Lead];
-        D --> E["4. Query Supabase Vector DB <br>(Find past interactions)"];
+        D --> E["4. Query Supabase Vector DB <br> to find past interactions"];
     end
 
     subgraph "Phase 3: Personalized Action & Analysis"
         E --> F{"5. OpenAI: Generate Personalized <br> Outreach Message"};
         F --> G[6. Send Email via Gmail];
-        G --> H(7. Wait & Listen for Reply);
-        H --> I{"8. OpenAI: Analyze Reply Intent <br>(Interested or Not Interested?)"};
+        G --> H(7. Wait and Listen for Reply);
+        H --> I{"8. OpenAI: Analyze Reply Intent"};
     end
 
     subgraph "Phase 4: Autonomous Execution"
-        I --> J{9. Positive Reply?};
-        J -- Yes --> K["10a. Access Google Calendar <br> & Create Meeting"];
+        I --> J{9. Is Reply Positive?};
+        J -- Yes --> K["10a. Access Google Calendar <br> and Create Meeting"];
         J -- No --> L["10b. Log Lead in Google Sheet <br> for future follow-up"];
     end

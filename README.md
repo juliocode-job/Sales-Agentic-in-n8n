@@ -15,7 +15,7 @@ I designed and built an automated agentic workflow in n8n that works 24/7 to sol
 ### Workflow Architecture
 This diagram illustrates the four key phases of the agent's decision-making process.
 
-![Workflow Architecture Diagram](assets/n8n-workflow-architecture(1).png)
+![Workflow Architecture Diagram](assets/n8n-workflow-architecture.png)
 
 ---
 
